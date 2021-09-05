@@ -89,7 +89,25 @@ class TestCredentials(unittest.TestCase):
 
         self.assertTrue(credential_exists)
 
-  
+    def test_display_credential(self):
+        '''
+        method that returns a list of all credential saved
+        '''
+
+        self.assertEqual(Credentials.display_credential(),Credentials.credential_list)
+
+    def test_copy_userPassword(self):
+        '''
+        Test to confirm that we are copying the userpassword address from a found credential
+        '''
+
+        self.new_credential.save_credential()
+        Credentials.copy_userPassword("accountK")
+
+        self.assertEqual(self.new_credential.userPassword, pyperclip.paste())
+    
+   
+
 
 
 
