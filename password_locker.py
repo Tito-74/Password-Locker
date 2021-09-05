@@ -24,7 +24,20 @@ class User:
                     return True
 
         return False
-    
+    @classmethod
+    def find_user(cls,username,userPassword):
+        '''
+        Method that takes in a number and returns a credential  that matches that number.
+
+        Args:
+            number: Phone number to search for
+        Returns :
+            credential of person that matches the number.
+        '''
+
+        for user in cls.user_list:
+            if user.username == username and user.userPassword == userPassword:
+                return user
 
 class Credentials(User):
     credential_list = []
