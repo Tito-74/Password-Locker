@@ -62,5 +62,19 @@ class Credentials(User):
         Credentials.credential_list.remove(self)
     
     
-   
+    @classmethod
+    def find_by_account(cls,account):
+        '''
+        Method that takes in a number and returns a credential  that matches that number.
 
+        Args:
+            number: Phone number to search for
+        Returns :
+            credential of person that matches the number.
+        '''
+
+        for credential in cls.credential_list:
+            if credential.accountName == account:
+                return credential
+
+   
