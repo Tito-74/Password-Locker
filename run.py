@@ -177,6 +177,22 @@ def main():
                     "We can't seem to find any accounts saved in your account. \nMake sure have have successfuly created first.")
                 print('\n')
 
+        elif short_code == 'F':
+                print("Enter the account name you would like to find.")
+                print('~'*45)
+                find_accounts = input()
+                print('\n')
+                if check_existing_credential(find_accounts):
+                    search_account = find_credential(find_accounts)
+                    print("RESULTS")
+                    print("~"*7)
+                    print(f"Account Name ~~~>{search_account.accountName}")
+                    print(f"Username ~~~>{search_account.username}")
+                    print(f"Password ~~~>{search_account.userPassword}")
+                else:
+                    print(
+                        "We can find the account you are looking for! \nCheck the account you provided and try again.")
+                print('\n')
         
 # white_check_mark
 # eyes
