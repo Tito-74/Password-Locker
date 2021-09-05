@@ -193,7 +193,26 @@ def main():
                     print(
                         "We can find the account you are looking for! \nCheck the account you provided and try again.")
                 print('\n')
-        
+        elif short_code == 'R':
+                print("Enter name of account to delete")
+                print("~"*31)
+                find_accounts = input()
+                print("\n")
+                if check_existing_credential(find_accounts):
+                    search_account = find_credential(find_accounts)
+                    del_credential(search_account)
+                    print(
+                        f"{search_account.accountName}Account deleted successfully")
+                else:
+                    print('\n')
+                    print(
+                        "We can find the account you are looking for! \nCheck the accounts you have and try again.")
+        elif short_code == "Q":
+            print("Thanks for choosing Password Locker. Bye.")
+            break
+        else:
+            print(
+                "I  didn't get that. Please make sure you use the abbreviations to perform an operation.")
 # white_check_mark
 # eyes
 # raised_hands
