@@ -84,7 +84,39 @@ def password_generator():
 #             print("Your Password is" password_generator())
 
 
+def main():
+    print("Hello Welcome to your Password Locker")
+    print("Create a username")
+    print('~' * 17)
+    username = input()
+    print('\n')
+    print("Create password for you Password Locker account.")
+    print('~' * 47)
+    userPassword = input()
+    print('\n')
+    save_new_user(add_user(username,userPassword))
+    print('_'*70)
+    print("\n")
+    print(f"Hello {username}, Thank you for creating an account with us.")
+    print('\n')
+    print("Proceed to Login")
+    print('\n')
+    print("Enter your username:")
+    print('~' * 20)
+    account_username = input()
+    print('\n')
+    print("Enter your password:")
+    print('~' * 20)
+    account_password = input()
+    print('\n')
+    if check_existing_user(account_username, account_password):
+        # """
+        # Function to check if the user provided in login exists in the users list.
+        # """
+        get_user = find_user(account_username, account_password)
 
+
+    
 
 
 if __name__ == '__main__':
