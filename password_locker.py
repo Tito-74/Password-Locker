@@ -45,5 +45,13 @@ class Credentials(User):
         super().__init__(username,userPassword)
         self.accountName = accountName
 
-   
+    def save_credential(self):
+
+        '''
+        save_credentials method saves credentials objects into credential_list
+        '''
+    
+        Credentials.credential_list.append(self)
+
+  
 
