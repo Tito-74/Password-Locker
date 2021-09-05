@@ -100,5 +100,13 @@ class Credentials(User):
         
         return cls.credential_list
 
-   
+    @classmethod
+    def copy_userPassword(cls, account):
+        credential_found = Credentials.find_by_account(account)
+        pyperclip.copy(credential_found.userPassword)
+
+
+# user1 = Credentials('tito','1234','twitter')
+# user2 = Credentials('kipkirui','4321','facebook')
+# print(credential_found)
 
