@@ -64,16 +64,14 @@ def display_credential():
     Function that returns all the saved credential
     '''
     return Credentials.display_credential()
-def password_generator():
-    value = 10
-    lower = string.ascii_lowercase
-    upper = string.ascii_uppercase
-    num = string.digits
-    all = lower + upper + num
-    temp = random.sample(all, value)
-    genPassword = "".join(temp)
-
-    return genPassword
+def password_choice(quiz):
+    """
+    Function that defines mode of password creation.
+    """
+    user_choice = None
+    while user_choice not in ("yes", "no"):
+        user_choice = input(quiz).lower()
+    return user_choice
 # print('Do You want Generated Password?')
 #         print('Please choose Yes or No')
 #         inputPwd = input().lowerCase()
@@ -82,6 +80,7 @@ def password_generator():
 #             createdpasswrd = input()
 #         else:
 #             print("Your Password is" password_generator())
+
 
 
 def main():
@@ -145,7 +144,7 @@ def main():
                     num = string.digits
                     all = lower + upper + num
                     temp = random.sample(all, value)
-                    password = "".join(temp)
+                    userPassword = "".join(temp)
                 else:
                     """
                     Password created by user.
@@ -154,6 +153,41 @@ def main():
                     print("Please Create a password for your account.")
                     print("~"*41)
                     userPassword = input()
+                # Saving the new credentials
+                save_credential(add_credential(accountName, username,userPassword))
+                print('\n')
+                print("ACCOUNT CREDENTIALS SUCCESSFULLY SAVED.")
+                print("~"*38)
+                print(f"TYPE--->{accountName} account.")
+                print(f"USERNAME--->{username}")
+                print(f"PASSWORD--->{userPassword}")
+                print('\n')
+        elif short_code == 'D':
+            if display_credential():
+                print("Here is a list of all your accounts")
+                print('~'*35)
+                for credential in display_credential():
+                    print(f"Account Name--->{credential.accountName} account.")
+                    print(f"USERNAME--->{credential.username}")
+                    print(f"PASSWORD--->{credential.userPassword}")
+                    print('-'*33)
+            else:
+                print('\n')
+                print(
+                    "We can't seem to find any accounts saved in your account. \nMake sure have have successfuly created first.")
+                print('\n')
+
+        
+# white_check_mark
+# eyes
+# raised_hands
+
+
+
+
+
+
+
                 
 
 

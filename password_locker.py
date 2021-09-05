@@ -41,7 +41,7 @@ class User:
 
 class Credentials(User):
     credential_list = []
-    def __init__(self,username,userPassword,accountName):
+    def __init__(self,accountName,username,userPassword):
         super().__init__(username,userPassword)
         self.accountName = accountName
 
