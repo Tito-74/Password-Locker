@@ -12,13 +12,13 @@ class User:
         User.user_list.append(self)
     @classmethod
     def user_exist(cls,username,userPassword):
-        # '''
-        # Method that checks if a credential exists from the credential list.
-        # Args:
-        #     number: Phone number to search if it exists
-        # Returns :
-        #     Boolean: True or false depending if the credential exists
-        # '''
+        '''
+        Method that checks if a credential exists from the credential list.
+        Args:
+            number: Phone number to search if it exists
+        Returns :
+            Boolean: True or false depending if the credential exists
+        '''
         for user in cls.user_list:
             if user.username == username and user.userPassword == userPassword:
                     return True
@@ -106,7 +106,5 @@ class Credentials(User):
         pyperclip.copy(credential_found.userPassword)
 
 
-# user1 = Credentials('tito','1234','twitter')
-# user2 = Credentials('kipkirui','4321','facebook')
-# print(credential_found)
+
 
