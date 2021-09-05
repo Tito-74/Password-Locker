@@ -116,7 +116,45 @@ def main():
         get_user = find_user(account_username, account_password)
 
 
-    
+    while True:
+        print("Use these short codes :  C- create a new Credential, D - display credentials, F -find a credentials, R -To delete an existing account credentials., Q -exit the contact list ")
+        print("What would you like to do?")
+        short_code = input().upper()
+        if short_code == 'C':
+                print("New Credential Account")
+                print("~"*22)
+                print("Enter Account Type")
+                print("~"*18)
+                accountName = input()
+                print("\n")
+                print("Enter it's Username")
+                print("~"*19)
+                username = input()
+                print("\n")
+                # Password generation
+                password_creation = password_choice(
+                    "Would you like to have your password generated?(yes/no)"
+                )
+                if password_creation == "yes":
+                    """
+                    Autogenerate password code.
+                    """
+                    value = 16
+                    lower = string.ascii_lowercase
+                    upper = string.ascii_uppercase
+                    num = string.digits
+                    all = lower + upper + num
+                    temp = random.sample(all, value)
+                    password = "".join(temp)
+                else:
+                    """
+                    Password created by user.
+                    """
+                    print("\n")
+                    print("Please Create a password for your account.")
+                    print("~"*41)
+                    userPassword = input()
+                
 
 
 if __name__ == '__main__':
